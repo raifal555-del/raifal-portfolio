@@ -367,33 +367,39 @@ dd {
   margin-top: 0.55rem;
 }
 
-.projects {
+.project-tiles {
   list-style: none;
   padding: 0;
-}
-
-.project {
+  margin: 0;
   display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 1.5rem;
-  padding: 1.8rem 0;
-  border-top: 1px solid var(--line-ink);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
-.project:last-child {
-  border-bottom: 1px solid var(--line-ink);
+.tile {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.4rem 1.35rem 1.3rem;
+  border: 1px solid var(--line-ink);
+  background: rgba(255, 255, 255, 0.28);
+  color: inherit;
 }
 
-.project-no {
+.tile-featured {
+  grid-column: 1 / -1;
+  background: var(--ink);
+  color: var(--paper);
+  border-color: transparent;
+}
+
+.tile-kicker {
   font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--brass-deep);
-  padding-top: 0.35rem;
-}
-
-.project h3 {
-  font-family: var(--display);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  letter-spacing: -0.03em;
+  margin-bottom: 0.7rem;
 }
 
 .project-tag {
@@ -402,27 +408,49 @@ dd {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brass-deep);
-  margin: 0.3rem 0 0.8rem;
 }
 
-.project p {
-  max-width: 42rem;
+.tile-featured .tile-kicker,
+.tile-featured .project-tag {
+  color: var(--brass);
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 0.95rem;
+.tile h3 {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.15rem;
 }
 
-.chips span {
-  border: 1px solid var(--line-ink);
-  padding: 0.22rem 0.55rem;
+.tile .project-tag {
+  margin: 0.25rem 0 0.75rem;
+}
+
+.tile p {
+  max-width: none;
+}
+
+.tile .chips {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.tile-featured .chips span {
+  border-color: var(--line);
+}
+
+.tile-cta {
+  display: inline-block;
+  margin-top: 1.1rem;
   font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--brass);
+}
+
+.tile-featured:hover .tile-cta {
+  color: var(--paper);
 }
 
 .skills {
@@ -550,9 +578,8 @@ dd {
     border-right: 0;
   }
 
-  .project {
+  .project-tiles {
     grid-template-columns: 1fr;
-    gap: 0.4rem;
   }
 
   .display {
