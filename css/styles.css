@@ -291,9 +291,17 @@ dd {
 
 .section-head h2 {
   font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
   letter-spacing: -0.04em;
   font-weight: 700;
+}
+
+.section-note {
+  max-width: 44rem;
+  margin: -1.4rem 0 2.2rem;
+  color: var(--brass-deep);
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .about-grid {
@@ -702,6 +710,11 @@ dd {
 
   .skills > div {
     border-right: 0;
+  }
+
+  .section-head {
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   .project-tiles,
