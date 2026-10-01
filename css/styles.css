@@ -493,11 +493,17 @@ dd {
   border-color: var(--line);
 }
 
+.tile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
 .tile-cta {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin-top: 1.2rem;
   padding: 0.55rem 0.85rem;
   border: 1px solid var(--brass);
   font-family: var(--mono);
